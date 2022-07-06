@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #262427;
+    font-family: arial;
+}
+
+main {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: auto;
+}
+
+.header {
+    height: auto;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.header img {
+    width: 30%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.header h2 {
+    color: #cc9965;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.header p {
+    color: #9da6a9;
+    font-size: 0.5em;
+    padding-bottom: 20px;
+}
+
+.date {
+    background: url(https://europe.wordcamp.org/2017/files/2017/01/background-pattern-01.png);
+    background-color: #f1e4d5;
+    height: 70px;
+    font-weight: bold;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.event {
+    background: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.event ul li{
+    list-style: none;
+    border-bottom: 1px solid #989898;
+    width: 95%;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin: auto;
+}
+
+li h2 {
+    font-size: 0.8em;
+}
+
+li p:nth-of-type(1) {
+    font-size: 0.5em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+li p:nth-of-type(2) {
+    font-weight: bold;
+    font-size: 0.6em;
+}
+
+ul li:last-of-type {
+    border: none;
+}
+
+.menu {
+    display: grid;
+}
+
+.box-1 {
+    background: #f1e4d5;
+    color: black;
+    height: 70px;
+    font-size: 0.8em;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-2 {
+    background: #e7ab47;
+    color: white;
+    height: 70px;
+    font-size: 0.8em;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-3 {
+    background: #68470c;
+    color: white;
+    height: 70px;
+    font-size: 0.8em;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-4 {
+    background: #cc9965;
+    color: white;
+    height: 70px;
+    font-size: 0.8em;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer {
+    color: white;
+    padding: 15px;
+}
+
+footer h2 {
+    font-size: 0.9em;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+footer p {
+    font-style: italic;
+    font-size: 0.7em;
+}
+
+@media (max-width: 400px) {
+    section {
+        display: grid;
+        grid-template-areas: 
+        "header"
+        "date"
+        "event"
+        "menu"
+        "footer";
+    }
+}
+
+@media (min-width:400px) and (max-width: 768px) {
+    section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "date date"
+        "event header"
+        "event menu"
+        "event 0"
+        "footer 0";
+    }
+}
+
+@media (min-width:768px) {
+    main {
+        width: 800px;
+        height: auto;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    section {
+        min-width: 800px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+        "date date date date"
+        "event event header header"
+        "event event menu footer"
+        "event event 0 0" ;
+    }
+
+    .menu {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    footer {
+        width: 100%;
+    }
+
+}
+
+section .header {
+    grid-area: header;
+}
+
+section .date {
+    grid-area: date;
+}
+
+section .event {
+    grid-area: event;
+}
+
+section .menu {
+    grid-area: menu;
+}
+
+section footer {
+    grid-area: footer;
+}
